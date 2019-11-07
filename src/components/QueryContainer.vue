@@ -11,7 +11,7 @@ export default {
   components: { QueryBox },
   methods: {
     search(query) {
-      this.$store.dispatch("search", { query });
+      this.$store.dispatch("article/search", { query });
     }
   }
 };

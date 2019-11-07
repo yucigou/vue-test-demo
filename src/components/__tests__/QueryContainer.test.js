@@ -16,7 +16,9 @@ describe("QueryContainer", () => {
       search: jest.fn()
     };
     store = new Vuex.Store({
-      actions
+      modules: {
+        article: { namespaced: true, actions }
+      }
     });
   });
 
