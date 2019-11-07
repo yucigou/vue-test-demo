@@ -1,9 +1,9 @@
 <template>
-  <section>
+  <section class="item">
     <div>
       {{ item.title }}
     </div>
-    <div>
+    <div class="author">
       {{ item.authorString }}
     </div>
   </section>
@@ -15,3 +15,12 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+section.item {
+  margin: 20px;
+}
+.author {
+  font-size: smaller;
+}
+</style>

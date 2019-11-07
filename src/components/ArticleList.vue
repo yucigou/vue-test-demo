@@ -1,7 +1,9 @@
 <template>
   <section>
-    <h2>Results</h2>
-    <div>1 - 25 of {{ count }} results</div>
+    <h2 v-if="count">Results</h2>
+    <div v-if="count">
+      1 - {{ count > 25 ? 25 : count }} of {{ count }} results
+    </div>
     <div>
       <div v-for="item in list" :key="item.id" class="item">
         <ArticleItem :item="item" />
@@ -20,21 +22,22 @@ export default {
   components: {
     ArticleItem
   },
-  computed: mapState({
+  computed: mapState("article", {
     list: state => {
       if (
         state.searchResult &&
-        state.searchResult.resultList &&
-        state.searchResult.resultList.result
+        state.searchResult.data &&
+        state.searchResult.data.resultList &&
+        state.searchResult.data.resultList.result
       ) {
-        return state.searchResult.resultList.result;
+        return state.searchResult.data.resultList.result;
       } else {
         return [];
       }
     },
     count: state => {
-      if (state.searchResult) {
-        return state.searchResult.hitCount;
+      if (state.searchResult && state.searchResult.data) {
+        return state.searchResult.data.hitCount;
       } else {
         return "";
       }
@@ -42,3 +45,9 @@ export default {
   })
 };
 </script>
+
+<style scoped>
+section {
+  text-align: left;
+}
+</style>

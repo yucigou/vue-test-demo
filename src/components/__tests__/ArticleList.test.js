@@ -13,10 +13,12 @@ describe("ArticleList", () => {
 
   beforeEach(() => {
     state = {
-      searchResult: data
+      searchResult: { data }
     };
     store = new Vuex.Store({
-      state
+      modules: {
+        article: { namespaced: true, state }
+      }
     });
   });
 
