@@ -1,20 +1,29 @@
 <template>
   <div class="home">
-    <QueryContainer />
-    <ArticleList />
+    <QueryBox @search="search" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import QueryContainer from "@/components/QueryContainer.vue";
-import ArticleList from "@/components/ArticleList.vue";
+import QueryBox from "@/components/QueryBox.vue";
 
 export default {
   name: "home",
   components: {
-    QueryContainer,
-    ArticleList
+    QueryBox
+  },
+  methods: {
+    search(query) {
+      this.$router.push({ name: "search", query: { query } });
+    }
   }
 };
 </script>
+
+<style scoped>
+div.home {
+  text-align: center;
+  margin-top: 200px;
+}
+</style>

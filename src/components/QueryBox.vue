@@ -1,6 +1,13 @@
 <template>
   <div>
-    <input type="text" name="query" id="query" v-model="query" />
+    <input
+      type="text"
+      name="query"
+      id="query"
+      v-model="query"
+      size="40"
+      @keyup.enter="emitQuery"
+    />
     <button @click="emitQuery">Search</button>
   </div>
 </template>
@@ -19,3 +26,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+input {
+  margin-right: 10px;
+}
+</style>

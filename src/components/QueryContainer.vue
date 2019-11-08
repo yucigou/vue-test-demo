@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <QueryBox @search="search" />
   </div>
 </template>
@@ -12,7 +12,18 @@ export default {
   methods: {
     search(query) {
       this.$store.dispatch("article/search", { query });
+      history.pushState(
+        {},
+        null,
+        this.$route.path + "?query=" + encodeURIComponent(query)
+      );
     }
   }
 };
 </script>
+
+<style lang="scss" scoped>
+div.container {
+  text-align: center;
+}
+</style>

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleItem renders the list item correctly 1`] = `
+<section class="item">
+  <div>
+    Matrine derivate MASM protects murine MC3T3-E1 osteoblastic cells against dexamethasone-induced apoptosis via the regulation of USP14/p53.
+  </div>
+  <div class="author">
+    Zhou P, Xia D, Wang Y, Lv H, Wang Z, Xing M, Zhao Q, Xu S.
+  </div>
+</section>
+`;

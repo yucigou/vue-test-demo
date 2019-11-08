@@ -21,4 +21,13 @@ describe("QueryBox", () => {
     button.trigger("click");
     expect(wrapper.emitted().search[0]).toEqual([query]);
   });
+
+  it("emits search event with the input text as payload when keyup enter", () => {
+    const query = "cancer";
+    const wrapper = shallowMount(QueryBox);
+    const input = wrapper.find("input");
+    input.setValue(query);
+    input.trigger("keyup.enter");
+    expect(wrapper.emitted().search[0]).toEqual([query]);
+  });
 });

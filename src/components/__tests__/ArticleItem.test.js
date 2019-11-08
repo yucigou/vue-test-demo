@@ -12,4 +12,13 @@ describe("ArticleItem", () => {
     expect(wrapper.text()).toContain(data.title);
     expect(wrapper.text()).toContain("Zhou P");
   });
+
+  it("renders the list item correctly", () => {
+    const wrapper = shallowMount(ArticleItem, {
+      propsData: {
+        item: data
+      }
+    });
+    expect(wrapper).toMatchSnapshot();
+  });
 });
