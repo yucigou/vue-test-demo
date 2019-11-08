@@ -1,3 +1,21 @@
+Note: this a demo project for testing Vue.js apps.
+
+You can compare the following tags to see each added steps:
+
+```
+01-scaffolded
+02-coverage
+03-test-report
+04-querybox
+05-europepmcws
+06-vuex-article
+07-QueryContainer
+08-ArticleItem
+09-ArticleList
+10-Home
+11-routing
+```
+
 # vue-test-demo
 
 ## Project setup
